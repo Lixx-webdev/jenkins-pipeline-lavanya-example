@@ -15,20 +15,11 @@ pipeline {
         }
         stage('Build') {
             steps {
-                dir("/var/lib/jenkins/workspace/demo-pipeline-task/my-app/") 
-                {
-                sh 'mvn -B -DskipTests clean package'
-                }
-            
+                echo "This is my first pipeline"
             
         }
      }
-    post {
-       always {
-          junit(
-        allowEmptyResults: true,
-        testResults: '*/test-reports/.xml'
-      )
-      }
-   } 
+   
+        }
+
 
